@@ -58,7 +58,7 @@ function actualizarDetalleCarrito() {
 function actualizarTotal() {
     const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
     document.getElementById('total-carrito').textContent = total;
-    document.getElementById('contador-carrito').textContent = carrito.length;
+    document.getElementById('contador-carrito').textContent = '$' + total;
 }
 
 function vaciarCarrito() {
