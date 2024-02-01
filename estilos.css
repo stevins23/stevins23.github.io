@@ -19,6 +19,7 @@ body {
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 16px; /* Aumentado para móviles */
 }
 
 .categoria-btn:hover {
@@ -52,7 +53,7 @@ body {
     background-color: #007bff;
     color: white;
     border-radius: 50%;
-    padding: 10px;
+    padding: 15px; /* Aumentado para una mejor interacción */
     cursor: pointer;
 }
 
@@ -62,15 +63,16 @@ body {
     right: -10px;
     background-color: red;
     border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
+    padding: 5px 10px; /* Ajustado para mejor visibilidad */
+    font-size: 14px; /* Aumentado para móviles */
 }
 
 #detalle-carrito {
     position: fixed;
     right: 20px;
     bottom: 70px;
-    width: 300px;
+    width: 90%; /* Ajustado para móviles */
+    max-width: 300px; /* Limita el tamaño en dispositivos más grandes */
     background-color: white;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     border-radius: 5px;
@@ -99,4 +101,25 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 10px;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 600px) {
+    #categorias {
+        flex-direction: column;
+    }
+
+    .categoria-btn {
+        width: 100%; /* Botones ocupan todo el ancho */
+        margin: 5px 0; /* Menor separación entre botones */
+    }
+
+    #carrito-icono {
+        bottom: 10px; /* Posición más baja para evitar superposición */
+        right: 10px;
+    }
+
+    #detalle-carrito {
+        bottom: 60px; /* Espacio adicional para el ícono del carrito */
+    }
 }
