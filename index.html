@@ -1,1 +1,31 @@
-<h1>Hola</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carta del Bar</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div id="categorias">
+    <button class="categoria-btn" data-categoria="ron">Ron</button>
+    <button class="categoria-btn" data-categoria="ginebras">Ginebras</button>
+    <button class="categoria-btn" data-categoria="cocteles">Cocteles</button>
+</div>
+
+<div id="productos"></div>
+
+<div id="carrito-icono">
+    <img src="carrito.png" alt="Carrito">
+    <span id="contador-carrito">0</span>
+</div>
+
+<div id="detalle-carrito" class="oculto">
+    <ul id="lista-carrito"></ul>
+    <strong>Total: $<span id="total-carrito">0</span></strong>
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
