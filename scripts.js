@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.categoria-btn').forEach(button => {
+    document.querySelectorAll('.button-54').forEach(button => {
         button.addEventListener('click', () => cargarProductos(button.dataset.categoria));
     });
 
@@ -29,12 +29,31 @@ function cargarProductos(categoria) {
     divProductos.innerHTML = ''; // Limpiar productos anteriores
 
     productosEjemplo[categoria].forEach(producto => {
+        // Crear el contenedor del producto
         const divProducto = document.createElement('div');
         divProducto.classList.add('producto');
-        divProducto.textContent = `${producto.nombre} - $${producto.precio}`;
+
+        // Crear un elemento para el nombre del producto
+        const nombreProducto = document.createElement('div');
+        nombreProducto.classList.add('nombre-producto');
+        nombreProducto.textContent = producto.nombre;
+
+        // Crear un elemento para el precio del producto
+        const precioProducto = document.createElement('div');
+        precioProducto.classList.add('precio-producto');
+        precioProducto.textContent = `$${producto.precio}`;
+
+        // Agregar el nombre y precio al contenedor del producto
+        divProducto.appendChild(nombreProducto);
+        divProducto.appendChild(precioProducto);
+
+        // Añadir el evento onclick para agregar al carrito
         divProducto.onclick = () => agregarAlCarrito(producto);
+
+        // Agregar el producto al contenedor principal de productos
         divProductos.appendChild(divProducto);
     });
+
 }
 
 function agregarAlCarrito(producto) {
@@ -48,12 +67,27 @@ function actualizarDetalleCarrito() {
 
     carrito.forEach(producto => {
         const li = document.createElement('li');
-        li.textContent = `${producto.nombre} - $${producto.precio}`;
+
+        // Crear un elemento para el nombre del producto
+        const nombreProducto = document.createElement('span');
+        nombreProducto.classList.add('nombre-producto');
+        nombreProducto.textContent = producto.nombre;
+
+        // Crear un elemento para el precio del producto
+        const precioProducto = document.createElement('span');
+        precioProducto.classList.add('precio-producto');
+        precioProducto.textContent = ` - $${producto.precio}`;
+
+        // Agregar el nombre y precio al elemento de la lista
+        li.appendChild(nombreProducto);
+        li.appendChild(precioProducto);
+
         listaCarrito.appendChild(li);
     });
 
     actualizarTotal();
 }
+
 
 function actualizarTotal() {
     const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
