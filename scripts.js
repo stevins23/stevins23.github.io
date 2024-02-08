@@ -21,7 +21,7 @@ function cargarProductos(categoria) {
         ],
         cocteles: [
             { id: 5, nombre: 'Mojito', precio: 10 },
-            { id: 6, nombre: 'Piña Colada', precio: 12 }
+            { id: 6, nombre: 'Piña Colada', precio: 13 }
         ]
     };
 
