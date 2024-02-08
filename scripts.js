@@ -5,7 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('carrito-icono').addEventListener('click', toggleDetalleCarrito);
     document.getElementById('vaciar-carrito').addEventListener('click', vaciarCarrito);
+
+    const idiomaPreferido = localStorage.getItem('idiomaSeleccionado') || 'es';
+    if (idiomaPreferido === 'en') { // Cambiar al inglés si es el idioma preferido
+        cambiarIdioma();
+    }
 });
+
+const traducciones = {
+    es: {
+        menu: "MENÚ",
+        ron: "RON",
+        ginebras: "GINEBRAS",
+        cocteles: "COCTELES",
+        total: "Total",
+        vaciarCarrito: "Vaciar Carrito"
+    },
+    en: {
+        menu: "MENU",
+        ron: "RUM",
+        ginebras: "GINS",
+        cocteles: "COCKTAILS",
+        total: "Total",
+        vaciarCarrito: "Empty Cart"
+    }
+};
+
 
 let carrito = [];
 
@@ -104,3 +129,26 @@ function toggleDetalleCarrito() {
     const detalle = document.getElementById('detalle-carrito');
     detalle.classList.toggle('visible');
 }
+
+let idiomaActual = 'es'; // Español por defecto
+
+function cambiarIdioma() {
+    idiomaActual = idiomaActual === 'es' ? 'en' : 'es'; // Cambiar el idioma
+
+    // Actualizar la imagen de la bandera en el botón
+    const imagenBandera = document.getElementById('imagen-bandera');
+    imagenBandera.src = idiomaActual === 'es' ? 'es.png' : 'en.png';
+    imagenBandera.alt = idiomaActual === 'es' ? 'Español' : 'English';
+
+    // Actualizar las traducciones en la página
+    document.querySelector('.twelve h1').textContent = traducciones[idiomaActual].menu;
+    document.querySelectorAll('.button-54').forEach((button) => {
+        button.textContent = traducciones[idiomaActual][button.dataset.categoria];
+    });
+    document.querySelector('#vaciar-carrito').textContent = traducciones[idiomaActual].vaciarCarrito;
+    // Asegúrate de actualizar otros elementos que necesiten traducción
+
+    localStorage.setItem('idiomaSeleccionado', idiomaActual);
+    cargarProductos(document.querySelector('.button-54[data-categoria]').dataset.categoria); // Recargar productos en el idioma seleccionado
+}
+

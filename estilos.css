@@ -5,6 +5,18 @@ body {
     background-color: #f4f4f4;
 }
 
+#boton-idioma {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#boton-idioma img {
+    height: 30px; /* Ajusta esto según tus necesidades */
+    width: auto;
+}
+
+
 #categorias {
     text-align: center;
     padding: 20px;
@@ -51,9 +63,9 @@ body {
     /* Eliminar el borde */
     border-radius: 10px;
     /* Suavizar los bordes */
-    padding: 15px;
+    padding: 5px;
     /* Espaciado interno */
-    margin: 10px;
+    margin: 50px;
     /* Espaciado externo */
     font-family: 'Raleway', sans-serif;
     /* Fuente elegante */
@@ -62,12 +74,13 @@ body {
     /* Indica que es clickeable */
     display: flex;
     /* Flexbox para alinear nombre y precio */
-    justify-content: space-between;
+    justify-content: center;
     /* Espacio entre nombre y precio */
-    align-items: center;
+    align-items: flex-start;
     /* Centrar elementos verticalmente */
-    height: 50px;
+    height: 5px;
     /* Alto del elemento */
+    flex-direction: column;
 }
 
 @media (max-width: 600px) {
