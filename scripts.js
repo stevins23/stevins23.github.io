@@ -307,11 +307,12 @@ function actualizarDetalleCarrito() {
 
     carrito.forEach(producto => {
         const li = document.createElement('li');
+        li.classList.add('item-carrito');
 
-        // Crear un elemento para el nombre del producto
+        // Decidir el nombre del producto según el idioma actual
         const nombreProducto = document.createElement('span');
         nombreProducto.classList.add('nombre-producto');
-        nombreProducto.textContent = producto.nombre;
+        nombreProducto.textContent = idiomaActual === 'es' ? producto.nombre_es : producto.nombre_en;
 
         // Crear un elemento para el precio del producto
         const precioProducto = document.createElement('span');
@@ -321,6 +322,15 @@ function actualizarDetalleCarrito() {
         // Agregar el nombre y precio al elemento de la lista
         li.appendChild(nombreProducto);
         li.appendChild(precioProducto);
+
+        // Verificar si el producto tiene una descripción y crear el elemento HTML si es necesario
+        if (producto.descripcion_es || producto.descripcion_en) {
+            const descripcionProducto = document.createElement('div');
+            descripcionProducto.classList.add('descripcion-producto');
+            // Usar la descripción según el idioma actual
+            descripcionProducto.textContent = idiomaActual === 'es' ? producto.descripcion_es : producto.descripcion_en;
+            li.appendChild(descripcionProducto);
+        }
 
         listaCarrito.appendChild(li);
     });
