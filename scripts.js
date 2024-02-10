@@ -323,15 +323,6 @@ function actualizarDetalleCarrito() {
         li.appendChild(nombreProducto);
         li.appendChild(precioProducto);
 
-        // Verificar si el producto tiene una descripción y crear el elemento HTML si es necesario
-        if (producto.descripcion_es || producto.descripcion_en) {
-            const descripcionProducto = document.createElement('div');
-            descripcionProducto.classList.add('descripcion-producto');
-            // Usar la descripción según el idioma actual
-            descripcionProducto.textContent = idiomaActual === 'es' ? producto.descripcion_es : producto.descripcion_en;
-            li.appendChild(descripcionProducto);
-        }
-
         listaCarrito.appendChild(li);
     });
 
