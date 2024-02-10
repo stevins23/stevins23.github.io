@@ -9,55 +9,38 @@
 </head>
 
 <body>
-    <div class="area">
-        <ul class="circles">
-            <button id="boton-idioma" onclick="cambiarIdioma()">
-                <img id="imagen-bandera" src="es.png" alt="Español">
-            </button>
+    <button id="boton-idioma" onclick="cambiarIdioma()">
+        <img id="imagen-bandera" src="es.png" alt="Español">
+    </button>
 
 
-            <div class="twelve">
-                <h1>MENU</h1>
-            </div>
+    <div class="twelve">
+        <h1>MENU</h1>
+    </div>
+    <button id="menu-toggle" class="menu-toggle">Menú</button> <!-- Botón para mostrar/ocultar las categorías -->
+    <div id="categorias" class="oculto">
+        <button class="button-54" role="button" data-categoria="ron">RON</button>
+        <button class="button-54" role="button" data-categoria="ginebras">GINEBRAS</button>
+        <button class="button-54" role="button" data-categoria="cocteles">COCTELES</button>
+        <button class="button-54" role="button" data-categoria="cocteles_sin_alcohol">COCTELES SIN ALCOHOL</button>
+        <button class="button-54" role="button" data-categoria="whisky">WHISKY</button>
+        <button class="button-54" role="button" data-categoria="licores">LICORES</button>
+        <button class="button-54" role="button" data-categoria="vodka">VODKA</button>
+        <button class="button-54" role="button" data-categoria="chupitos">CHUPITOS</button>
+        <button class="button-54" role="button" data-categoria="sidras">SIDRAS</button>
+        <button class="button-54" role="button" data-categoria="refrescos">REFRESCOS</button>
+        <button class="button-54" role="button" data-categoria="brandy">BRANDY</button>
+        <button class="button-54" role="button" data-categoria="cervezas">CERVEZAS</button>
+        <button class="button-54" role="button" data-categoria="vinos">VINOS</button>
+        <button class="button-54" role="button" data-categoria="shishas">SHISHAS</button>
+    </div>
 
-            <div id="categorias">
-                <button class="button-54" role="button" data-categoria="ron">RON</button>
-                <button class="button-54" role="button" data-categoria="ginebras">GINEBRAS</button>
-                <button class="button-54" role="button" data-categoria="cocteles">COCTELES</button>
-                <button class="button-54" role="button" data-categoria="cocteles_sin_alcohol">COCTELES SIN
-                    ALCOHOL</button>
-                <button class="button-54" role="button" data-categoria="whisky">WHISKY</button>
-                <button class="button-54" role="button" data-categoria="licores">LICORES</button>
-                <button class="button-54" role="button" data-categoria="vodka">VODKA</button>
-                <button class="button-54" role="button" data-categoria="chupitos">CHUPITOS</button>
-                <button class="button-54" role="button" data-categoria="sidras">SIDRAS</button>
-                <button class="button-54" role="button" data-categoria="refrescos">REFRESCOS</button>
-                <button class="button-54" role="button" data-categoria="brandy">BRANDY</button>
-                <button class="button-54" role="button" data-categoria="cervezas">CERVEZAS</button>
-                <button class="button-54" role="button" data-categoria="vinos">VINOS</button>
-                <button class="button-54" role="button" data-categoria="shishas">SHISHAS</button>
-            </div>
+    <div id="productos"></div>
 
-            <div id="productos"></div>
-
-            <div id="carrito-icono">
-                <img src="cart3.svg" alt="Carrito">
-                <span id="contador-carrito">$ 0</span>
-            </div>
-
-
-
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+    <div id="carrito-icono">
+        <img src="cart3.svg" alt="Carrito">
+        <span id="contador-carrito">$ 0</span>
+    </div>
     </div>
     <div id="detalle-carrito" class="oculto">
         <ul id="lista-carrito"></ul>

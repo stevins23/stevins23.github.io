@@ -10,6 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (idiomaPreferido === 'en') { // Cambiar al inglés si es el idioma preferido
         cambiarIdioma();
     }
+
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        var categorias = document.getElementById('categorias');
+        if (categorias.classList.contains('oculto')) {
+            categorias.classList.remove('oculto');
+        } else {
+            categorias.classList.add('oculto');
+        }
+
+        const divProductos = document.getElementById('productos');
+        divProductos.innerHTML = ''; // Limpiar productos anteriores
+    });
+
+    document.querySelector('#productos').addEventListener('click', function() {
+        const detalle = document.getElementById('detalle-carrito');
+        detalle.classList.remove('visible');
+    });
+    
 });
 
 const traducciones = {
@@ -294,6 +312,9 @@ function cargarProductos(categoria) {
     });
 
 
+    var categorias = document.getElementById('categorias');
+
+    categorias.classList.add('oculto');
 }
 
 function agregarAlCarrito(producto) {

@@ -5,6 +5,22 @@ body {
     background-color: #f4f4f4;
 }
 
+.menu-toggle {
+    /* Estilos para el botón de menú */
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#categorias.oculto {
+    display: none;
+}
+
 #boton-idioma {
     border: none;
     background-color: transparent;
@@ -27,107 +43,57 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
-    padding: 20px;
-    position: fixed;
-    /* Mantiene el div en una posición fija en la pantalla */
-    left: 50%;
-    /* Posiciona el div a la mitad del lado izquierdo */
-    top: 60%;
-    /* Posiciona el div a la mitad del lado superior */
-    transform: translate(-50%, -50%);
-    /* Centra el div exactamente en el medio */
-    width: 90%;
-    /* Ancho del div */
-    height: 400px;
-    /* Altura del div */
+    padding: 10px; /* Reducido de 20px para mayor espacio interior */
+    position: static;
+    width: calc(100% - 20px); /* Calcula el ancho considerando el padding */
+    max-height: 75vh;
     overflow-y: auto;
-    /* Permite el desplazamiento si el contenido es más largo que el div */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    /* Sombra para dar profundidad */
-    background: #fff;
-    /* Color de fondo */
-    border-radius: 10px;
-    /* Bordes redondeados */
     background: rgba(0, 0, 0, 0.8);
-    /* Fondo oscuro semitransparente para resaltar el texto */
     color: #fff;
-    /* Texto claro para legibilidad */
-}
-
-
-.producto {
-    background-color: #2c3e50;
-    /* Un azul oscuro más suave */
-    color: #ecf0f1;
-    /* Color claro para el texto */
-    border: none;
-    /* Eliminar el borde */
     border-radius: 10px;
-    /* Suavizar los bordes */
-    padding: 5px;
-    /* Espaciado interno */
-    margin: 50px;
-    /* Espaciado externo */
-    font-family: 'Raleway', sans-serif;
-    /* Fuente elegante */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    /* Indica que es clickeable */
-    display: flex;
-    /* Flexbox para alinear nombre y precio */
-    justify-content: center;
-    /* Espacio entre nombre y precio */
-    align-items: flex-start;
-    /* Centrar elementos verticalmente */
-    height: 5px;
-    /* Alto del elemento */
-    flex-direction: column;
+    margin: 0 auto; /* Ajustado para eliminar margen superior e inferior */
+    box-sizing: border-box; /* Asegura que padding y border estén incluidos en el ancho y alto */
 }
 
 @media (max-width: 600px) {
     #productos {
-        position: static;
-        /* Cambia de fixed a static para evitar problemas de desplazamiento */
-        height: auto;
-        /* Altura automática para acomodar todo el contenido */
-        max-height: 75vh;
-        /* Establece una altura máxima para evitar que ocupe toda la pantalla */
-        overflow-y: auto;
-        /* Permite desplazamiento interno si es necesario */
-        transform: none;
-        /* Elimina la transformación ya que no es necesaria para la posición estática */
-        top: auto;
-        /* Elimina el posicionamiento superior */
-        left: auto;
-        /* Elimina el posicionamiento izquierdo */
         width: 100%;
-        /* Ajusta el ancho para utilizar todo el espacio disponible */
-        margin: 20px 0;
-        /* Agrega un margen superior e inferior para separación */
+        margin: 10px 0; /* Reducido de 20px para evitar espacio excesivo en dispositivos pequeños */
     }
 
     .producto {
-        flex-direction: column;
-        /* Cambia la dirección del flex a columna para dispositivos pequeños */
-        height: auto;
-        /* Altura automática para cada producto */
+        margin: 10px; /* Margen reducido para pantallas pequeñas */
     }
+}
+
+.producto {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border-radius: 10px;
+    padding: 10px; /* Espaciado interno ajustado */
+    margin: 10px; /* Margen reducido */
+    font-family: 'Raleway', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 120px; /* Altura mínima para mostrar contenido */
+    flex-direction: column;
+    box-sizing: border-box; /* Incluye padding en la altura y ancho total */
 }
 
 .nombre-producto {
     font-size: 1.2em;
-    /* Tamaño más grande para el nombre */
     font-weight: 700;
-    /* Más peso para el nombre */
 }
 
 .precio-producto {
     font-size: 1em;
-    /* Tamaño estándar para el precio */
     font-weight: 400;
-    /* Menos peso para el precio */
     color: #f1c40f;
-    /* Color distintivo para el precio */
 }
 
 .producto:hover {
@@ -139,7 +105,7 @@ body {
 
 #carrito-icono {
     position: fixed;
-    bottom: 20px;
+    top: 10px;
     right: 20px;
     color: white;
     border-radius: 50%;
@@ -253,226 +219,4 @@ body {
     .button-54 {
         padding: 0.25em 0.75em;
     }
-}
-
-h1 {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    font-family: "Raleway", sans-serif;
-    font-weight: 300;
-    font-size: 40px;
-    color: #080808;
-    -webkit-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
-}
-
-h1 span {
-    display: block;
-    font-size: 0.5em;
-    line-height: 1.3;
-}
-
-h1 em {
-    font-style: normal;
-    font-weight: 600;
-}
-
-.twelve h1 {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    width: 160px;
-    text-align: center;
-    margin: auto;
-    white-space: nowrap;
-    padding-bottom: 13px;
-}
-
-.twelve h1:before {
-    background-color: #c50000;
-    content: '';
-    display: block;
-    height: 3px;
-    width: 75px;
-    margin-bottom: 5px;
-}
-
-.twelve h1:after {
-    background-color: #c50000;
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 3px;
-    width: 75px;
-    margin-bottom: 0.25em;
-}
-
-.twelve {
-    position: relative;
-    background: #f8f8f8;
-    width: 90%;
-    max-width: 500px;
-    padding: 2em;
-    margin: 1.5em auto;
-    border: 3px solid rgba(0, 0, 0, 0.08);
-}
-
-h1:before,
-h1:after {
-    background-color: #c50000;
-}
-
-@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
-
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-body {
-    font-family: 'Exo', sans-serif;
-}
-
-
-.context {
-    width: 100%;
-    position: absolute;
-    top: 50vh;
-
-}
-
-.context h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-}
-
-
-.area {
-    background: #4e54c8;
-    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
-    width: 100%;
-    height: 100vh;
-
-
-}
-
-.circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.circles li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
-    bottom: -150px;
-
-}
-
-.circles li:nth-child(1) {
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-}
-
-
-.circles li:nth-child(2) {
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-}
-
-.circles li:nth-child(3) {
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-}
-
-.circles li:nth-child(4) {
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
-
-.circles li:nth-child(5) {
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-}
-
-.circles li:nth-child(6) {
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-}
-
-.circles li:nth-child(7) {
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-}
-
-.circles li:nth-child(8) {
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-}
-
-.circles li:nth-child(9) {
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-}
-
-.circles li:nth-child(10) {
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-
-
-@keyframes animate {
-
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
-
 }
