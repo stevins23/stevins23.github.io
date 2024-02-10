@@ -12,7 +12,8 @@ body {
 }
 
 #boton-idioma img {
-    height: 30px; /* Ajusta esto según tus necesidades */
+    height: 30px;
+    /* Ajusta esto según tus necesidades */
     width: auto;
 }
 
@@ -85,20 +86,31 @@ body {
 
 @media (max-width: 600px) {
     #productos {
-        position: static; /* Cambia de fixed a static para evitar problemas de desplazamiento */
-        height: auto; /* Altura automática para acomodar todo el contenido */
-        max-height: 75vh; /* Establece una altura máxima para evitar que ocupe toda la pantalla */
-        overflow-y: auto; /* Permite desplazamiento interno si es necesario */
-        transform: none; /* Elimina la transformación ya que no es necesaria para la posición estática */
-        top: auto; /* Elimina el posicionamiento superior */
-        left: auto; /* Elimina el posicionamiento izquierdo */
-        width: 100%; /* Ajusta el ancho para utilizar todo el espacio disponible */
-        margin: 20px 0; /* Agrega un margen superior e inferior para separación */
+        position: static;
+        /* Cambia de fixed a static para evitar problemas de desplazamiento */
+        height: auto;
+        /* Altura automática para acomodar todo el contenido */
+        max-height: 75vh;
+        /* Establece una altura máxima para evitar que ocupe toda la pantalla */
+        overflow-y: auto;
+        /* Permite desplazamiento interno si es necesario */
+        transform: none;
+        /* Elimina la transformación ya que no es necesaria para la posición estática */
+        top: auto;
+        /* Elimina el posicionamiento superior */
+        left: auto;
+        /* Elimina el posicionamiento izquierdo */
+        width: 100%;
+        /* Ajusta el ancho para utilizar todo el espacio disponible */
+        margin: 20px 0;
+        /* Agrega un margen superior e inferior para separación */
     }
 
     .producto {
-        flex-direction: column; /* Cambia la dirección del flex a columna para dispositivos pequeños */
-        height: auto; /* Altura automática para cada producto */
+        flex-direction: column;
+        /* Cambia la dirección del flex a columna para dispositivos pequeños */
+        height: auto;
+        /* Altura automática para cada producto */
     }
 }
 
@@ -228,6 +240,7 @@ body {
     -webkit-user-select: none;
     touch-action: manipulation;
     margin-right: 15px;
+    margin-top: 10px;
 }
 
 .button-54:active {
