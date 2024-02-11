@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cambiarIdioma();
     }
 
-    document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('menu-toggle').addEventListener('click', function () {
         var categorias = document.getElementById('categorias');
         if (categorias.classList.contains('oculto')) {
             categorias.classList.remove('oculto');
@@ -21,13 +21,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const divProductos = document.getElementById('productos');
         divProductos.innerHTML = ''; // Limpiar productos anteriores
+        var contenedor = document.getElementById('productos');
+        if (contenedor.innerHTML.trim() === '') {
+            contenedor.classList.add('hide');
+        }
     });
 
-    document.querySelector('#productos').addEventListener('click', function() {
+    document.querySelector('#productos').addEventListener('click', function () {
         const detalle = document.getElementById('detalle-carrito');
         detalle.classList.remove('visible');
     });
-    
+
+    var contenedor = document.getElementById('productos');
+    if (contenedor.innerHTML.trim() === '') {
+        contenedor.classList.add('hide');
+    }
+
 });
 
 const traducciones = {
@@ -292,7 +301,7 @@ function cargarProductos(categoria) {
 
         const precioProducto = document.createElement('div');
         precioProducto.classList.add('precio-producto');
-        precioProducto.textContent = `$${producto.precio}`;
+        precioProducto.textContent = `${producto.precio}€`;
 
         divProducto.appendChild(nombreProducto);
         divProducto.appendChild(precioProducto);
@@ -309,6 +318,11 @@ function cargarProductos(categoria) {
         divProducto.onclick = () => agregarAlCarrito(producto);
 
         divProductos.appendChild(divProducto);
+
+        var contenedor = document.getElementById('productos');
+        if (contenedor.innerHTML.trim() !== '') {
+            contenedor.classList.remove('hide');
+        }
     });
 
 
@@ -338,7 +352,7 @@ function actualizarDetalleCarrito() {
         // Crear un elemento para el precio del producto
         const precioProducto = document.createElement('span');
         precioProducto.classList.add('precio-producto');
-        precioProducto.textContent = ` - $${producto.precio}`;
+        precioProducto.textContent = ` - ${producto.precio}€`;
 
         // Agregar el nombre y precio al elemento de la lista
         li.appendChild(nombreProducto);
@@ -354,7 +368,7 @@ function actualizarDetalleCarrito() {
 function actualizarTotal() {
     const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
     document.getElementById('total-carrito').textContent = total;
-    document.getElementById('contador-carrito').textContent = '$' + total;
+    document.getElementById('contador-carrito').textContent = total + '€';
 }
 
 function vaciarCarrito() {
@@ -381,7 +395,6 @@ function cambiarIdioma() {
     imagenBandera.alt = idiomaActual === 'es' ? 'Español' : 'English';
 
     // Actualizar las traducciones en la página
-    document.querySelector('.twelve h1').textContent = traducciones[idiomaActual].menu;
     document.querySelectorAll('.button-54').forEach((button) => {
         button.textContent = traducciones[idiomaActual][button.dataset.categoria];
     });
