@@ -139,7 +139,7 @@ function cargarProductos(categoria) {
             { id: 45, precio: 7.00, nombre_es: 'NEGRONI', nombre_en: 'NEGRONI', descripcion_es: 'Gin, Campari y Vermut dulce', descripcion_en: 'Gin, Campari, and sweet Vermouth' },
             { id: 46, precio: 7.00, nombre_es: 'BLACK DREAM', nombre_en: 'BLACK DREAM', descripcion_es: 'Vodka negro, zumo de piña, passoa, lima, puré de manzana', descripcion_en: 'Black vodka, pineapple juice, passoa, lime, apple purée' },
             { id: 47, precio: 7.00, nombre_es: 'Mojito Clásico', nombre_en: 'Classic Mojito', descripcion_es: 'Ron flor de caña, azúcar, lima, hierbabuena, soda', descripcion_en: 'Flor de Caña rum, sugar, lime, mint, soda water' },
-            { id: 48, precio: 7.00, nombre_es: 'Mojito Sabores', nombre_en: 'Flavored Mojito', descripcion_es: 'Ron flor de caña, azúcar, lima, hierbabuena, soda sabores (Fresa, fruta de la pasión, coco, plátano)', descripcion_en: 'Flor de Caña rum, sugar, lime, mint, flavored soda (Strawberry, passion fruit, coconut, banana)' },
+            { id: 48, precio: 7.20, nombre_es: 'Mojito Sabores', nombre_en: 'Flavored Mojito', descripcion_es: 'Ron flor de caña, azúcar, lima, hierbabuena, soda sabores (Fresa, fruta de la pasión, coco, plátano)', descripcion_en: 'Flor de Caña rum, sugar, lime, mint, flavored soda (Strawberry, passion fruit, coconut, banana)' },
             { id: 49, precio: 7.00, nombre_es: 'Margarita', nombre_en: 'Margarita', descripcion_es: 'Tequila, Cointreau y zumo de lima', descripcion_en: 'Tequila, Cointreau, and lime juice' },
             { id: 50, precio: 9.00, nombre_es: 'Cóctel a elección', nombre_en: 'Bartender\'s Choice', descripcion_es: 'Nuestro bartender puede preparar cualquier cóctel internacional a su sugerencia', descripcion_en: 'Our bartender can prepare any international cocktail upon request' }
         ],
@@ -158,7 +158,7 @@ function cargarProductos(categoria) {
             { id: 60, nombre_es: 'BALLANTINE\'S LIGHT', nombre_en: 'BALLANTINE\'S LIGHT', precio: 7.00 },
             { id: 61, nombre_es: 'JACK DANIEL\'S', nombre_en: 'JACK DANIEL\'S', precio: 7.00 },
             { id: 62, nombre_es: 'JAMESON', nombre_en: 'JAMESON', precio: 7.00 },
-            { id: 63, nombre_es: 'CHIVAS 18', nombre_en: 'CHIVAS 18', precio: 180.00 },
+            { id: 63, nombre_es: 'CHIVAS 18 BOTELLA', nombre_en: 'CHIVAS 18 BOTTLE', precio: 180.00 },
             { id: 64, nombre_es: 'GRANT\'S', nombre_en: 'GRANT\'S', precio: 6.00 },
             { id: 65, nombre_es: 'CHANCELER', nombre_en: 'CHANCELER', precio: 7.00 },
             { id: 66, nombre_es: 'CARDHU', nombre_en: 'CARDHU', precio: 8.00 },
@@ -166,9 +166,9 @@ function cargarProductos(categoria) {
             { id: 68, nombre_es: 'JOHNNIE WALKER RED LABEL', nombre_en: 'JOHNNIE WALKER RED LABEL', precio: 7.00 },
             { id: 69, nombre_es: 'JOHNNIE WALKER BLACK LABEL', nombre_en: 'JOHNNIE WALKER BLACK LABEL', precio: 8.00 },
             { id: 70, nombre_es: 'JOHNNIE WALKER GOLD LABEL', nombre_en: 'JOHNNIE WALKER GOLD LABEL', precio: 10.00 },
-            { id: 71, nombre_es: 'JOHNNIE WALKER BLUE LABEL', nombre_en: 'JOHNNIE WALKER BLUE LABEL', precio: 250.00 },
-            { id: 72, nombre_es: 'JOHNNIE WALKER DOUBLE BLACK', nombre_en: 'JOHNNIE WALKER DOUBLE BLACK', precio: 120.00 },
-            { id: 73, nombre_es: 'JOHNNIE WALKER PLATINUM LABEL', nombre_en: 'JOHNNIE WALKER PLATINUM LABEL', precio: 130.00 }
+            { id: 71, nombre_es: 'JOHNNIE WALKER BLUE LABEL BOTELLA', nombre_en: 'JOHNNIE WALKER BLUE LABEL BOTTLE', precio: 250.00 },
+            { id: 72, nombre_es: 'JOHNNIE WALKER DOUBLE BLACK BOTELLA', nombre_en: 'JOHNNIE WALKER DOUBLE BLACK BOTTLE', precio: 120.00 },
+            { id: 73, nombre_es: 'JOHNNIE WALKER PLATINUM LABEL BOTELLA', nombre_en: 'JOHNNIE WALKER PLATINUM LABEL BOTTLE', precio: 130.00 }
         ],
         licores: [
             { id: 74, nombre_es: 'TÍA MARÍA VAINILLA', nombre_en: 'TIA MARIA VANILLA', precio: 5.50 },
@@ -187,7 +187,10 @@ function cargarProductos(categoria) {
             { id: 87, nombre_es: 'HIPOPÓTAMO', nombre_en: 'HIPPOPOTAMUS', precio: 5.00 },
             { id: 88, nombre_es: 'AGUARDIENTE TAPA AZUL', nombre_en: 'BLUE CAP SPIRIT', precio: 40.00 },
             { id: 89, nombre_es: 'JÄGERMEISTER', nombre_en: 'JÄGERMEISTER', precio: 5.00 },
-            { id: 90, nombre_es: 'TEQUILA JOSÉ CUERVO', nombre_en: 'JOSE CUERVO TEQUILA', precio: 6.00 }
+            { id: 90, nombre_es: 'TEQUILA JOSÉ CUERVO', nombre_en: 'JOSE CUERVO TEQUILA', precio: 6.00 },
+            { id: 174, nombre_es: 'DOBLE BLACK BOTELLA', nombre_en: 'DOBLE BLACK BOTTLE', precio: 120.00 },
+            { id: 175, nombre_es: 'PLATINUM LABEL BOTELLA', nombre_en: 'PLATINUM LABEL BOTTLE', precio: 130.00 }
+
         ],
         vodka: [
             { id: 91, nombre_es: 'VODKA CARAMELO', nombre_en: 'CARAMEL VODKA', precio: 5.00 },
@@ -247,6 +250,8 @@ function cargarProductos(categoria) {
             { id: 134, nombre_es: '1906', nombre_en: '1906', precio: 3.50 },
             { id: 135, nombre_es: 'ESTRELLA GALICIA', nombre_en: 'ESTRELLA GALICIA', precio: 3.00 },
             { id: 136, nombre_es: 'DORADA ESPECIAL', nombre_en: 'DORADA ESPECIAL', precio: 3.50 },
+            { id: 172, nombre_es: 'TROPICAL LIMÓN', nombre_en: 'TROPICAL LEMON', precio: 3.00 },
+            { id: 173, nombre_es: 'TROPICAL', nombre_en: 'TROPICAL', precio: 3.00 },
             { id: 137, nombre_es: 'TROPICAL 0.0', nombre_en: 'TROPICAL 0.0', precio: 3.00 },
             { id: 138, nombre_es: 'DORADA SIN', nombre_en: 'DORADA SIN', precio: 3.00 },
             { id: 139, nombre_es: 'DORADA TOSTADA', nombre_en: 'DORADA TOSTADA', precio: 3.50 },
