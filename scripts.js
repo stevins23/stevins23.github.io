@@ -15,17 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
         var categorias = document.getElementById('categorias');
         if (categorias.classList.contains('oculto')) {
             categorias.classList.remove('oculto');
+            categorias.classList.add('mostrar'); // Agregar clase de animación para mostrar
         } else {
-            categorias.classList.add('oculto');
+            categorias.classList.remove('mostrar');
+            categorias.classList.add('oculto'); // Agregar clase de animación para ocultar
         }
-
+    
         const divProductos = document.getElementById('productos');
         divProductos.innerHTML = ''; // Limpiar productos anteriores
         var contenedor = document.getElementById('productos');
         if (contenedor.innerHTML.trim() === '') {
             contenedor.classList.add('hide');
         }
-    });
+    });    
 
     document.querySelector('#productos').addEventListener('click', function () {
         const detalle = document.getElementById('detalle-carrito');
@@ -290,9 +292,12 @@ function cargarProductos(categoria) {
     const divProductos = document.getElementById('productos');
     divProductos.innerHTML = ''; // Limpiar productos anteriores
 
-    productosEjemplo[categoria].forEach(producto => {
+    productosEjemplo[categoria].forEach((producto, index) => {
         const divProducto = document.createElement('div');
         divProducto.classList.add('producto');
+
+        // Ajustar el estilo para incluir un retraso basado en el índice del producto
+        divProducto.style.animationDelay = `${index * 100}ms`; // Aumenta el retraso para cada producto
 
         const nombreProducto = document.createElement('div');
         nombreProducto.classList.add('nombre-producto');
