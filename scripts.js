@@ -20,18 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
             categorias.classList.remove('mostrar');
             categorias.classList.add('oculto'); // Agregar clase de animación para ocultar
         }
-    
+
         const divProductos = document.getElementById('productos');
         divProductos.innerHTML = ''; // Limpiar productos anteriores
         var contenedor = document.getElementById('productos');
         if (contenedor.innerHTML.trim() === '') {
             contenedor.classList.add('hide');
         }
-    });    
-
-    document.querySelector('#productos').addEventListener('click', function () {
-        const detalle = document.getElementById('detalle-carrito');
-        detalle.classList.remove('visible');
     });
 
     var contenedor = document.getElementById('productos');
@@ -342,7 +337,18 @@ function cargarProductos(categoria) {
 }
 
 function agregarAlCarrito(producto) {
-    carrito.push(producto);
+    // Buscar si el producto ya está en el carrito
+    const productoExistente = carrito.find(p => p.id === producto.id);
+
+    if (productoExistente) {
+        // Si el producto ya existe, incrementar su cantidad
+        productoExistente.cantidad++;
+    } else {
+        // Si el producto no existe, establecer su cantidad a 1 y añadirlo al carrito
+        producto.cantidad = 1;
+        carrito.push(producto);
+    }
+
     actualizarDetalleCarrito();
 }
 
@@ -350,23 +356,45 @@ function actualizarDetalleCarrito() {
     const listaCarrito = document.getElementById('lista-carrito');
     listaCarrito.innerHTML = ''; // Limpiar detalle carrito
 
-    carrito.forEach(producto => {
+    carrito.forEach((producto, index) => {
         const li = document.createElement('li');
         li.classList.add('item-carrito');
 
-        // Decidir el nombre del producto según el idioma actual
         const nombreProducto = document.createElement('span');
         nombreProducto.classList.add('nombre-producto');
         nombreProducto.textContent = idiomaActual === 'es' ? producto.nombre_es : producto.nombre_en;
 
-        // Crear un elemento para el precio del producto
         const precioProducto = document.createElement('span');
         precioProducto.classList.add('precio-producto');
-        precioProducto.textContent = ` - ${producto.precio}€`;
+        precioProducto.textContent = ` - ${producto.precio}€ (x${producto.cantidad})`;
 
-        // Agregar el nombre y precio al elemento de la lista
+        // Botones para incrementar y disminuir cantidad
+        const aumentarBtn = document.createElement('button');
+        aumentarBtn.textContent = '+';
+        aumentarBtn.onclick = () => modificarCantidadProducto(index, 1);
+        // Añadir clase(s) al botón aumentar
+        aumentarBtn.classList.add('clase-aumentar'); // Añade una clase
+        // Si necesitas más de una clase, puedes llamar a add múltiples veces o pasar varias clases separadas por comas
+        // aumentarBtn.classList.add('clase-aumentar', 'otra-clase');
+
+        const disminuirBtn = document.createElement('button');
+        disminuirBtn.textContent = '-';
+        disminuirBtn.onclick = () => modificarCantidadProducto(index, -1);
+        // Añadir clase(s) al botón disminuir
+        disminuirBtn.classList.add('clase-disminuir'); // Añade una clase
+        // Si necesitas más de una clase, puedes llamar a add múltiples veces o pasar varias clases separadas por comas
+        // disminuirBtn.classList.add('clase-disminuir', 'otra-clase');
+
+        const div = document.createElement('div');
+
+        div.appendChild(aumentarBtn);
+        div.appendChild(disminuirBtn);
+
+
         li.appendChild(nombreProducto);
         li.appendChild(precioProducto);
+        li.appendChild(div);
+
 
         listaCarrito.appendChild(li);
     });
@@ -374,16 +402,30 @@ function actualizarDetalleCarrito() {
     actualizarTotal();
 }
 
-
 function actualizarTotal() {
-    const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
-    document.getElementById('total-carrito').textContent = total;
-    document.getElementById('contador-carrito').textContent = total + '€';
+    const total = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
+    document.getElementById('total-carrito').textContent = total.toFixed(2);
+    document.getElementById('contador-carrito').textContent = total.toFixed(2) + '€';
 }
 
 function vaciarCarrito() {
     carrito = [];
     actualizarDetalleCarrito();
+}
+
+function modificarCantidadProducto(index, cantidad) {
+    if (carrito[index].cantidad + cantidad > 0) {
+        carrito[index].cantidad += cantidad;
+    } else {
+        // Si la cantidad es 0 o negativa, eliminar el producto
+        eliminarProducto(index);
+    }
+    actualizarDetalleCarrito();
+}
+
+function eliminarProducto(index) {
+    carrito.splice(index, 1); // Eliminar el producto del carrito
+    actualizarDetalleCarrito(); // Actualizar el carrito
 }
 
 function toggleDetalleCarrito() {

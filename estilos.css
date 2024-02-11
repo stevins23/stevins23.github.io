@@ -134,12 +134,14 @@ body {
     flex-direction: column;
     box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    opacity: 0; /* Inicia con opacidad 0 para que la animación funcione */
-    animation: fadeInUp 0.5s ease forwards; /* Aplica la animación */
+    opacity: 0;
+    /* Inicia con opacidad 0 para que la animación funcione */
+    animation: fadeInUp 0.5s ease forwards;
+    /* Aplica la animación */
 }
 
 .nombre-producto {
-    font-size: 1.5em;
+    font-size: 1.3em;
     /* Más grande para destacar */
     font-weight: 700;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -149,8 +151,7 @@ body {
 .precio-producto {
     font-size: 1.1em;
     font-weight: 400;
-    color: #fff8e1;
-    /* Color más claro para integrarse mejor */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .producto:hover {
@@ -218,7 +219,7 @@ body {
     /* Transición suave para mostrar y ocultar */
 }
 
-#detalle-carrito.oculto {
+#detalle-carrito.no-visible {
     display: none;
 }
 
@@ -279,7 +280,9 @@ body {
 }
 
 
-.button-54 {
+.button-54,
+.clase-aumentar,
+.clase-disminuir {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     letter-spacing: 2px;
@@ -298,7 +301,9 @@ body {
     margin-top: 10px;
 }
 
-.button-54:active {
+.button-54:active,
+.clase-aumentar:active,
+.clase-disminuir:active {
     box-shadow: 0px 0px 0px 0px;
     top: 5px;
     left: 5px;
@@ -316,6 +321,7 @@ body {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -328,6 +334,7 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+
     to {
         opacity: 0;
         transform: translateY(-20px);
@@ -349,6 +356,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
