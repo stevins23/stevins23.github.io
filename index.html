@@ -1,34 +1,275 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stevins González</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stevins Xavier González Rodríguez | Desarrollador Full Stack</title>
+  <meta name="description" content="Portfolio profesional de Stevins Xavier González Rodríguez, desarrollador full stack especializado en PHP (F3), APIs REST, PostgreSQL y aplicaciones móviles híbridas con Apache Cordova.">
+  <meta name="author" content="Stevins Xavier González Rodríguez">
+  <meta name="theme-color" content="#0f141a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Stevins Xavier González Rodríguez | Desarrollador Full Stack">
+  <meta property="og:description" content="Desarrollo full stack con foco en APIs REST, PostgreSQL, PHP (F3) y apps móviles híbridas.">
+  <meta property="og:url" content="https://stevins23.github.io/">
+  <meta property="og:image" content="https://stevins23.github.io/favicon.svg">
+  <link rel="canonical" href="https://stevins23.github.io/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
 
-    <main>
-        <h1>Stevins González</h1>
-        <p>Desarrollador Full Stack</p>
+  <header class="site-header" id="inicio">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">SG</span>
+        <span class="brand-text">Stevins González</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-nav" class="main-nav" aria-label="Principal">
+        <a href="#sobre">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#stack">Stack</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-        <section>
-            <h2>Stack</h2>
+  <main>
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Desarrollador Full Stack</p>
+          <h1>Stevins Xavier González Rodríguez</h1>
+          <p class="lead">
+            Desarrollo soluciones web y móviles enfocadas en operación real de negocio. Trabajo con
+            <strong>PHP (F3 Framework), JavaScript, PostgreSQL y Apache Cordova</strong>, construyendo
+            APIs REST, automatizaciones internas y plataformas mantenibles.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:stevinsgonzalez23@gmail.com">Contactar por email</a>
+            <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
+          </div>
+          <ul class="quick-stats" aria-label="Resumen profesional">
+            <li>
+              <span class="stat-value">2+ años</span>
+              <span class="stat-label">Experiencia profesional</span>
+            </li>
+            <li>
+              <span class="stat-value">REST + DB</span>
+              <span class="stat-label">Integración backend/móvil</span>
+            </li>
+            <li>
+              <span class="stat-value">Remoto</span>
+              <span class="stat-label">Colaboración técnica diaria</span>
+            </li>
+          </ul>
+        </div>
+        <aside class="hero-panel reveal" aria-label="Enfoque profesional">
+          <h2>Enfoque</h2>
+          <p>
+            Me especializo en crear sistemas internos sólidos, APIs claras y flujos automatizados que reducen
+            trabajo manual y mejoran la trazabilidad operativa.
+          </p>
+          <p>
+            Participo en el ciclo completo: análisis, implementación, pruebas y mantenimiento continuo.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container grid-2">
+        <article class="card reveal">
+          <h2>Sobre mí</h2>
+          <p>
+            Soy desarrollador de software con formación en Desarrollo de Aplicaciones Web (FP Superior) y
+            experiencia profesional en desarrollo web y móvil. Me adapto rápido a nuevos retos técnicos y
+            priorizo soluciones prácticas orientadas a resultados.
+          </p>
+          <p>
+            Mi trabajo combina arquitectura backend, diseño de APIs y construcción de interfaces funcionales,
+            manteniendo estándares de calidad y evolución continua del producto.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <h2>Perfil profesional</h2>
+          <ul class="check-list">
+            <li>Desarrollo y mantenimiento de plataformas internas empresariales.</li>
+            <li>Diseño e implementación de APIs REST para apps móviles y sistemas de gestión.</li>
+            <li>Automatización de tareas con procesos batch y scripts operativos.</li>
+            <li>Optimización de bases de datos PostgreSQL y consultas de alto uso.</li>
+            <li>Comunicación técnica directa en entorno remoto con responsables de área.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="experiencia" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Experiencia</p>
+          <h2>Trayectoria profesional</h2>
+        </div>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-date">Junio 2023 - Actualidad</span>
+            <h3>Programador Full Stack</h3>
+            <p>Miart Canarias SL · Arrecife, España</p>
+          </div>
+          <div class="timeline-content">
             <ul>
-                <li>PHP</li>
-                <li>PostgreSQL</li>
-                <li>JavaScript</li>
-                <li>F3 Framework</li>
-                <li>Cordova</li>
-                <li>Firebase</li>
+              <li>Desarrollo y mantenimiento de aplicaciones web internas con PHP (F3 Framework), JavaScript, HTML y CSS.</li>
+              <li>Diseño de APIs RESTful para comunicación segura entre aplicaciones móviles y plataforma de gestión.</li>
+              <li>Construcción de aplicaciones móviles híbridas con Apache Cordova integradas con backend propio.</li>
+              <li>Automatización de procesos internos con scripts y ejecuciones batch para reducir tareas manuales.</li>
+              <li>Gestión y optimización de base de datos PostgreSQL, mejorando rendimiento y consistencia operativa.</li>
+              <li>Participación en análisis, implementación, pruebas y mantenimiento dentro del ciclo completo de desarrollo.</li>
             </ul>
-        </section>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <section>
-            <h2>Contacto</h2>
-            <a href="https://github.com/TUUSUARIO">GitHub</a>
-        </section>
-    </main>
+    <section id="stack" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Stack tecnológico</p>
+          <h2>Tecnologías principales</h2>
+        </div>
 
+        <div class="stack-grid reveal" role="list" aria-label="Stack tecnológico">
+          <article class="stack-item" role="listitem">
+            <span class="stack-icon">PHP</span>
+            <h3>PHP + F3 Framework</h3>
+            <p>Backend modular para aplicaciones internas y APIs.</p>
+          </article>
+          <article class="stack-item" role="listitem">
+            <span class="stack-icon">JS</span>
+            <h3>JavaScript</h3>
+            <p>Lógica de interfaz y comportamiento dinámico del cliente.</p>
+          </article>
+          <article class="stack-item" role="listitem">
+            <span class="stack-icon">PG</span>
+            <h3>PostgreSQL</h3>
+            <p>Modelo relacional, consultas optimizadas y mantenimiento.</p>
+          </article>
+          <article class="stack-item" role="listitem">
+            <span class="stack-icon">API</span>
+            <h3>APIs REST</h3>
+            <p>Integración consistente entre backend, apps móviles y gestión.</p>
+          </article>
+          <article class="stack-item" role="listitem">
+            <span class="stack-icon">APP</span>
+            <h3>Apache Cordova</h3>
+            <p>Aplicaciones móviles híbridas conectadas con servicios propios.</p>
+          </article>
+          <article class="stack-item" role="listitem">
+            <span class="stack-icon">UI</span>
+            <h3>HTML5 + CSS3</h3>
+            <p>Interfaces claras, responsivas y enfocadas en uso real.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Proyectos</p>
+          <h2>Case studies profesionales</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <h3>Sistema interno de gestión empresarial</h3>
+            <p>
+              Plataforma web para operación interna, con módulos de administración y flujos de trabajo para
+              tareas diarias del equipo.
+            </p>
+            <p class="project-focus"><strong>Enfoque:</strong> estabilidad, mantenibilidad y eficiencia operativa.</p>
+            <p class="project-tech">Tecnologías: PHP (F3), JavaScript, HTML, CSS, PostgreSQL.</p>
+          </article>
+
+          <article class="project-card reveal">
+            <h3>API REST para aplicaciones móviles</h3>
+            <p>
+              Diseño e implementación de endpoints para sincronizar datos entre app móvil híbrida y sistema
+              de gestión interno.
+            </p>
+            <p class="project-focus"><strong>Enfoque:</strong> integración robusta y comunicación consistente.</p>
+            <p class="project-tech">Tecnologías: PHP (F3), APIs REST, PostgreSQL.</p>
+          </article>
+
+          <article class="project-card reveal">
+            <h3>App móvil híbrida con Apache Cordova</h3>
+            <p>
+              Desarrollo de aplicación híbrida conectada a backend propio para cubrir necesidades operativas
+              en movilidad.
+            </p>
+            <p class="project-focus"><strong>Enfoque:</strong> productividad en campo y continuidad con plataforma central.</p>
+            <p class="project-tech">Tecnologías: Apache Cordova, JavaScript, HTML, CSS, APIs REST.</p>
+          </article>
+
+          <article class="project-card reveal">
+            <h3>Automatización de procesos internos</h3>
+            <p>
+              Implementación de procesos batch y scripts para reducir tareas manuales repetitivas y mejorar
+              tiempos de ejecución.
+            </p>
+            <p class="project-focus"><strong>Enfoque:</strong> ahorro de tiempo y reducción de errores operativos.</p>
+            <p class="project-tech">Tecnologías: PHP, scripts batch, PostgreSQL.</p>
+          </article>
+
+          <article class="project-card reveal">
+            <h3>Optimización de base de datos PostgreSQL</h3>
+            <p>
+              Mejora de consultas y mantenimiento de estructura relacional para soportar carga diaria y
+              consistencia de datos.
+            </p>
+            <p class="project-focus"><strong>Enfoque:</strong> rendimiento y confiabilidad de la capa de datos.</p>
+            <p class="project-tech">Tecnologías: PostgreSQL, SQL, backend PHP.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section section-contact">
+      <div class="container contact-card reveal">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2>Hablemos de tu próximo proyecto</h2>
+          <p>
+            Estoy disponible para oportunidades laborales, colaboraciones técnicas y proyectos freelance.
+          </p>
+        </div>
+        <div class="contact-links" role="list" aria-label="Enlaces de contacto">
+          <a role="listitem" href="mailto:stevinsgonzalez23@gmail.com">stevinsgonzalez23@gmail.com</a>
+          <a role="listitem" href="https://github.com/stevins23" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a role="listitem" href="https://es.linkedin.com/in/stevins-xavier-gonz%C3%A1lez-rodr%C3%ADguez-748b76201" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a role="listitem" href="http://cv.miartcanarias.com/stevins" target="_blank" rel="noopener noreferrer">CV online</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Stevins Xavier González Rodríguez. Portfolio profesional.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
