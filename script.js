@@ -5,6 +5,7 @@ const sections = document.querySelectorAll('main section[id]');
 const revealItems = document.querySelectorAll('.reveal');
 const yearNode = document.getElementById('year');
 const heroMain = document.querySelector('.hero-main');
+const profileFrame = document.getElementById('profile-frame');
 
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
@@ -81,7 +82,23 @@ if (heroMain && window.matchMedia('(prefers-reduced-motion: no-preference)').mat
   });
 
   heroMain.addEventListener('pointerleave', () => {
-    heroMain.style.setProperty('--mx', '82%');
-    heroMain.style.setProperty('--my', '18%');
+    heroMain.style.setProperty('--mx', '86%');
+    heroMain.style.setProperty('--my', '16%');
+  });
+}
+
+if (profileFrame && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  profileFrame.addEventListener('pointermove', (event) => {
+    const rect = profileFrame.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const rotateY = ((x / rect.width) - 0.5) * 8;
+    const rotateX = (((y / rect.height) - 0.5) * -8);
+
+    profileFrame.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-3px)`;
+  });
+
+  profileFrame.addEventListener('pointerleave', () => {
+    profileFrame.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0)';
   });
 }
