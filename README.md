@@ -1,64 +1,60 @@
-# Portfolio - Stevins Xavier González Rodríguez
+# Stevins González · Portfolio
 
-Portfolio profesional desarrollado con HTML, CSS y JavaScript vanilla, optimizado para GitHub Pages.
+Portfolio personal de **Stevins Xavier González Rodríguez**, enfocado en presentar experiencia real como desarrollador **Full Stack** y proyectos móviles en **Flutter**.
 
-## Tecnologías
+## Vista general
 
-- HTML5
-- CSS3
-- JavaScript (vanilla)
+- Diseño moderno, minimalista y responsive.
+- Secciones: Hero, Sobre mí, Experiencia, Stack, Proyectos y Contacto.
+- Enfoque profesional: APIs REST, PostgreSQL, automatización, backend PHP/F3 y desarrollo móvil.
+
+## Secciones del sitio
+
+- **Hero**: presentación profesional + CTA de contacto y descarga de CV.
+- **Sobre mí**: resumen de perfil y fortalezas técnicas.
+- **Experiencia**: responsabilidades y resultados en entorno productivo real.
+- **Stack**: tecnologías principales web y móvil.
+- **Proyectos**: repositorios públicos destacados y case studies profesionales.
+- **Contacto**: acceso directo a email, GitHub, LinkedIn y CV.
+
+## Stack
+
+### Core Web
+- PHP (F3 Framework)
+- JavaScript
+- HTML5 / CSS3
+- PostgreSQL
+- APIs REST
+
+### Mobile
+- Apache Cordova
+- Flutter
+- Dart
+
+## Proyectos destacados
+
+- **Active Map**  
+  Flutter + Firebase + Google Maps para geolocalización y compartición de ubicación.
+  - Repo: <https://github.com/stevins23/active_map>
+
+- **Mes en Orden**  
+  App Android en Flutter para control financiero mensual con persistencia local.
+  - Repo: <https://github.com/stevins23/mes_en_orden>
 
 ## Estructura
 
-- `index.html` - Estructura principal del sitio.
-- `style.css` - Estilos, diseño responsive y tema oscuro.
-- `script.js` - Interacciones ligeras (menú móvil, animaciones de entrada, navegación activa).
-- `favicon.svg` - Favicon del portfolio.
-
-## Características
-
-- Diseño moderno, profesional y minimalista.
-- Responsive para móvil y escritorio.
-- Secciones orientadas a perfil profesional real:
-  - Hero
-  - Sobre mí
-  - Experiencia
-  - Stack tecnológico
-  - Proyectos (case studies)
-  - Contacto
-- Animaciones suaves sin dependencias pesadas.
-- SEO básico (metadatos y Open Graph).
-
-## Vista local
-
-1. Clona el repositorio.
-2. Abre la carpeta del proyecto.
-3. Ejecuta un servidor local simple, por ejemplo:
-
-```bash
-python3 -m http.server 5500
+```text
+.
+├── assets/
+│   └── cv/
+│       └── stevins-gonzalez-cv.pdf
+├── favicon.svg
+├── index.html
+├── script.js
+├── style.css
+└── README.md
 ```
-
-4. Abre en el navegador: `http://localhost:5500`
-
-## Despliegue en GitHub Pages
-
-1. Sube el proyecto al repositorio (branch `main`).
-2. En GitHub entra en `Settings` > `Pages`.
-3. En `Build and deployment`, selecciona:
-   - Source: `Deploy from a branch`
-   - Branch: `main` / `/ (root)`
-4. Guarda y espera el despliegue.
-5. Tu sitio quedará disponible en:
-   - `https://TU-USUARIO.github.io/`
-   - o `https://TU-USUARIO.github.io/TU-REPO/` (si no es repo de usuario)
-
-## Personalización rápida
-
-- Edita textos en `index.html`.
-- Ajusta colores y tipografías en variables `:root` dentro de `style.css`.
-- Reemplaza enlaces de contacto en la sección `#contacto` de `index.html`.
 
 ## Nota
 
-El contenido profesional (perfil, experiencia y stack) está redactado a partir del CV proporcionado.
+El contenido profesional del portfolio está basado en experiencia real y en el CV actualizado.

@@ -1,12 +1,13 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
-const revealItems = document.querySelectorAll('.reveal');
 const sections = document.querySelectorAll('main section[id]');
+const revealItems = document.querySelectorAll('.reveal');
 const yearNode = document.getElementById('year');
+const heroMain = document.querySelector('.hero-main');
 
 if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
+  yearNode.textContent = String(new Date().getFullYear());
 }
 
 if (menuToggle && mainNav) {
@@ -21,7 +22,18 @@ if (menuToggle && mainNav) {
       menuToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) {
+      mainNav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
+
+revealItems.forEach((item, index) => {
+  item.style.transitionDelay = `${Math.min(index * 35, 280)}ms`;
+});
 
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
@@ -32,17 +44,20 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.16, rootMargin: '0px 0px -40px 0px' }
+  {
+    threshold: 0.16,
+    rootMargin: '0px 0px -42px 0px'
+  }
 );
 
 revealItems.forEach((item) => revealObserver.observe(item));
 
 const setActiveNav = () => {
   let activeSectionId = '';
-  const scrollY = window.scrollY + window.innerHeight * 0.32;
+  const pivot = window.scrollY + window.innerHeight * 0.32;
 
   sections.forEach((section) => {
-    if (scrollY >= section.offsetTop) {
+    if (pivot >= section.offsetTop) {
       activeSectionId = section.id;
     }
   });
@@ -55,3 +70,18 @@ const setActiveNav = () => {
 
 window.addEventListener('scroll', setActiveNav, { passive: true });
 window.addEventListener('load', setActiveNav);
+
+if (heroMain && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  heroMain.addEventListener('pointermove', (event) => {
+    const rect = heroMain.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    heroMain.style.setProperty('--mx', `${x.toFixed(2)}%`);
+    heroMain.style.setProperty('--my', `${y.toFixed(2)}%`);
+  });
+
+  heroMain.addEventListener('pointerleave', () => {
+    heroMain.style.setProperty('--mx', '82%');
+    heroMain.style.setProperty('--my', '18%');
+  });
+}
